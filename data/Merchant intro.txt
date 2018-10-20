@@ -1,0 +1,29 @@
+event "Merchant Start"
+	date 25 11 3013
+
+mission "Merchant Start 1"
+	name "Shipment to <destination>"
+	description "Take <cargo> to <destination>"
+	landing
+	to offer
+		"assisted free worlds" < 3
+		has "event: Merchant Start"
+	source
+		government "Republic" "Syndicate" "Free Worlds"
+	cargo "Medieval Weaponry" 10
+	destination
+		distance 5 8
+	to fail
+		has "chosen sides"
+	on offer
+		conversation
+			``As you enter the bustling spaceport, a man wearing a dark blue suit walks up to you "Excuse me sir, would you mind ferrying these <cargo> to <destination>? Our original contact bailed out on us after they were attacked days ago while ferrying the cargo."`
+			choice
+				`	"Of course"`
+					accept
+				`	"No thanks"`
+					decline
+	on complete
+		payment 50000
+		conversation
+			`Men quickly unload the cargo from your hold. A woman in a dark blue suit, which is almost the same suit as the man you met for this job, thanks you. "We have another cargo that requires a Captain to transport it. If you would like to take that offer, meet me in the spaceport after this."`
