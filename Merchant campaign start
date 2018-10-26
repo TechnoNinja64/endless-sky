@@ -1,0 +1,42 @@
+mission "FW Commitment"
+	landing
+  deadline
+	name "Join the Free Worlds"
+	description "If you want to join the Free Worlds, report to their headquarters on <destination>."
+	minor
+	source
+		government "Free Worlds"
+	destination "Bourne"
+	to offer
+		"assisted free worlds" >= 3
+		has "FW Katya 7C: done"
+	to fail
+		has "chosen sides"
+  to fail
+    
+    
+	to complete
+		never
+	
+	on offer
+		log "Got invited to join the Free Worlds. It's a valuable opportunity, but it would also be a fast way to become an enemy of the Republic."
+		conversation
+			`Soon after you land, a courier arrives at your ship and hands you a formal looking letter. It reads:`
+			``
+			`Dear Captain <last>,`
+			`	The Free Worlds council would like to thank you for the invaluable assistance you have rendered to us recently. We are prepared to offer you a position as an officer in our militia, remaining in command of your own ship. Your starting salary will be 300 credits per diem. If you want to join us, please report to our headquarters on Bourne at your earliest convenience.`
+			`	Sincerely,`
+			`				Tomek Voigt`
+			`				Jean-Jacques Soleau`
+			`				Freya Winters`
+			`				Alondo Gruyere`
+			`				Katerina Reynolds`
+			``
+			`	You notice that Katya's name is printed, instead of signed like the others; she must still be undercover on Clink.`
+				accept
+
+mission "Chosen no one"
+  invisible
+  to offer
+    has
+  
