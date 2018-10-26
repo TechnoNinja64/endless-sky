@@ -1,5 +1,5 @@
 event "Merchant Start"
-	date 25 11 3013
+	date 4 1 3016
 
 mission "Merchant Start 1"
 	name "Shipment to <destination>"
